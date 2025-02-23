@@ -1,14 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollView_home"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.HomeFragment">
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Home Fragement" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-</FrameLayout>
+        <!-- ส่วนของแบนเนอร์ -->
+        <ImageView
+            android:id="@+id/bannerImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/freesample_vectorizer_io_t_t_2675_stationery_shop_display_banner"
+            android:contentDescription="Banner" />
+
+        <!-- ส่วนของรายการสินค้าแนะนำ -->
+        <TextView
+            android:id="@+id/tvRecommendedTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="สินค้าแนะนำ"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:paddingTop="16dp" />
+
+        <!-- RecyclerView สำหรับรายการสินค้าแนะนำ -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recommendedProductsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- ส่วนของโปรโมชั่นที่น่าสนใจ -->
+        <TextView
+            android:id="@+id/tvPromotionsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="โปรโมชั่นที่น่าสนใจ"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:paddingTop="16dp" />
+
+        <!-- RecyclerView สำหรับโปรโมชั่น -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/promotionsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <GridView
+            android:id="@+id/gridview_categories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="2"
+            android:verticalSpacing="10dp"
+            android:horizontalSpacing="10dp"
+            android:stretchMode="columnWidth"
+            android:gravity="center" />
+
+    </LinearLayout>
+</ScrollView>
